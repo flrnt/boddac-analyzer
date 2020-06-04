@@ -11,7 +11,7 @@ npm install -g boddac-analyzer # Or yarn global add boddac-analyzer
 ## Usage
 
 ```bash
-ba [siret]
+ba [siren]
 
 # Example
 ba 822554127

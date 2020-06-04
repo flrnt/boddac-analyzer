@@ -1,7 +1,7 @@
 {
   "name": "boddac-analyzer",
   "version": "0.1.0",
-  "description": "Get Boddac list from SIRET number",
+  "description": "Analyze Bodacc files of a society based on its siren number",
   "main": "index.js",
   "bin": {
     "ba": "bin/ba.js",
@@ -13,7 +13,7 @@
   "keywords": [
     "bodacc",
     "bodacc analyzer",
-    "siret"
+    "siren"
   ],
   "author": "flrnt",
   "license": "MIT",
