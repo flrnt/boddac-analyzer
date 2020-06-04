@@ -1,0 +1,27 @@
+{
+  "name": "boddac-analyzer",
+  "version": "0.0.0",
+  "description": "Get Boddac list from SIRET number",
+  "main": "index.js",
+  "bin": {
+    "ba": "bin/ba.js",
+    "bodacc-analyzer": "bin/ba.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bodacc",
+    "bodacc analyzer",
+    "siret"
+  ],
+  "author": "flrnt",
+  "license": "MIT",
+  "dependencies": {
+    "consola": "^2.12.2",
+    "lmify": "^0.3.0",
+    "ora": "^4.0.4",
+    "puppeteer": "^3.3.0",
+    "yargs": "^15.3.1"
+  }
+}
