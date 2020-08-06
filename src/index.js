@@ -1,9 +1,21 @@
-const puppeteer = require('puppeteer')
+const chromium = require('chrome-aws-lambda')
+
+let browser = null
 
 module.exports = async function (siren) {
   if (siren.length < 9) { throw new Error(`This siren is not valid : ${siren}`) }
 
-  const browser = await puppeteer.launch()
+  if (!browser) {
+    const executablePath = await chromium.executablePath
+
+    browser = await chromium.puppeteer.launch({
+      executablePath,
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      headless: true
+    })
+  }
+
   const page = await browser.newPage()
 
   await page.goto(`https://www.bodacc.fr/annonce/liste/${siren}`)
