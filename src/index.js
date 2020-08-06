@@ -1,20 +1,25 @@
 const chromium = require('chrome-aws-lambda')
 
-let browser = null
+async function getPuppeteerPath() {
+  let executablePath = await chromium.executablePath
+
+  if (process.env.NETLIFY_DEV) {
+    executablePath = null // forces to use local puppeteer
+  }
+
+  return executablePath
+}
 
 module.exports = async function (siren) {
+  const executablePath = await getPuppeteerPath()
+  const browser = await chromium.puppeteer.launch({
+    executablePath,
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    headless: true
+  })
+
   if (siren.length < 9) { throw new Error(`This siren is not valid : ${siren}`) }
-
-  if (!browser) {
-    const executablePath = await chromium.executablePath
-
-    browser = await chromium.puppeteer.launch({
-      executablePath,
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      headless: true
-    })
-  }
 
   const page = await browser.newPage()
 
