@@ -18,14 +18,14 @@
   "author": "flrnt",
   "license": "MIT",
   "dependencies": {
-    "chrome-aws-lambda": "^3.1.1",
+    "chrome-aws-lambda": "^2.1.1",
     "consola": "^2.12.2",
     "lmify": "^0.3.0",
     "ora": "^4.0.4",
-    "puppeteer-core": "^3.3.0",
+    "puppeteer-core": "^2.1.1",
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "puppeteer": "^3.3.0"
+    "puppeteer": "^2.1.1"
   }
 }
